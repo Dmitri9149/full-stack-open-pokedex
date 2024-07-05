@@ -1,5 +1,9 @@
 name: Simple pipeline
 
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   simple_deployment_pipeline:
