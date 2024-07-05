@@ -14,3 +14,5 @@ jobs:
           echo "Hello World!"
       - name: Date 
         run: date
+      - name: List
+        run: ls -a
