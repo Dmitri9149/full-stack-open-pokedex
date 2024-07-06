@@ -45,7 +45,7 @@ module.exports = {
     historyApiFallback: true,
     allowedHosts: [
       '.onrender.com'
-       ],
+    ],
     // from https://stackoverflow.com/questions/43619644/i-am-getting-an-invalid-host-header-message-when-connecting-to-webpack-dev-ser
 //    disableHostCheck: true,   // That solved it
   },
