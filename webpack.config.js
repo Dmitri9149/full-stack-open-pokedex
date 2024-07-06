@@ -43,6 +43,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    // from https://stackoverflow.com/questions/43619644/i-am-getting-an-invalid-host-header-message-when-connecting-to-webpack-dev-ser
     disableHostCheck: true,   // That solved it
   },
   plugins: [
