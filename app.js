@@ -14,7 +14,7 @@ app.listen(PORT, () => {
   })
 
   app.get('/health', (req, res) => {  // health check endpoint, f.e. use in Render
-    res.send('ok')        
+    res.send('ok')
   })
 
 })
