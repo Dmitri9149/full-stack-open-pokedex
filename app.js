@@ -13,7 +13,7 @@ app.listen(PORT, () => {
     res.send('1') // change this string to ensure a new version deployed
   })
 
-  app.get('/health', (req, res) => { // health check endpoint, f.e. use in Render
+  app.get('/health', (req, res) => {  // health check endpoint, f.e. use in Render
     res.send('ok')
   })
 
