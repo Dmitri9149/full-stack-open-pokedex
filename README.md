@@ -1,15 +1,5 @@
-# Full Stack open CI/CD
+### Full Stack Open 2024 , CI/CD , part 11 
 
-This repository is used for the CI/CD module of the Full stack open course
+Solutions to the exercises of the course [FullStack open 2024 ; CI/CD ; part 11](https://fullstackopen.com/en/part11)   
 
-Fork the repository to complete course exercises
-
-## Commands
-
-Start by running `npm install` inside the project folder
-
-`npm start` to run the webpack dev server
-`npm test` to run tests
-`npm run eslint` to run eslint
-`npm run build` to make a production build
-`npm run start-prod` to run your production build
+In the exercises we are building a CI/CD pipeline for the [small project from the example repository](https://github.com/fullstack-hy2020/full-stack-open-pokedex)
