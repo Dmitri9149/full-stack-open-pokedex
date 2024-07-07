@@ -1,25 +1,24 @@
 name: Simple pipeline
 
 on:
+  pull_request:
   push:
     branches: [main]
 
 jobs:
-  render_deployment_pipeline:
-    runs-on: ubuntu-20.04
+  ci:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with: 
-          node-version: '16'
-      - name: Install dependencies
-        run: npm install
-      - name: Check style 
-        run: npm run-script eslint
-      - name: Build 
-        run: npm run build
       - name: Test
-        run: npm run test
-      - name: Trigger deployment
+        run: |
+          npm install
+          npm run test
+
+      - name: Deploy
         # Only run this step if the branch is main
         if: github.ref == 'refs/heads/main'
-        run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
