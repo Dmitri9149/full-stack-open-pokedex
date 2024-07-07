@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -35,8 +38,8 @@ jobs:
           path: playwright-report/
           retention-days: 30
       - name: Deploy
-      # Only run this step if the branch is main
-        if: github.ref == 'refs/heads/main'
+      # deploy only on push / pull to main 
+        if: ${{ github.event_name == 'push' }}
         env:
           deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
