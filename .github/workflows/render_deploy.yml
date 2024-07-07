@@ -22,4 +22,4 @@ jobs:
       - name: Trigger deployment
         # Only run this step if the branch is main
         if: github.ref == 'refs/heads/main'
-        run: curl ${{ secrets.RENDER_DEPLOY_HOOK_URL}}
+        run: run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
